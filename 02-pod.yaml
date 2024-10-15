@@ -1,8 +1,8 @@
-kind: pod
-apiVersion: v2
+kind: Pod
+apiVersion: v1
 metadata:
   name: nginx
 spec:
   containers:
   - name: nginx
-    image: nginx
+    image: nginx:stable-otel
