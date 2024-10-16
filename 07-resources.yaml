@@ -8,11 +8,9 @@ spec:
   - name: nginx
     image: nginx
     resources:
-     #soft limits
   requests:
     memory: "128mi"
     cpu: "100m"
-  # limits should be atleast or more than request i .e hard limit
   limits:
     memory: "128Mi"
     cpu: "500m"
