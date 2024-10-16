@@ -1,3 +1,4 @@
+
 kind: Pod
 apiVersion: v1
 metadata:
@@ -5,9 +6,9 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image:nginx
+    image: nginx
     env:
     - name: course
-      value: 'kubernets'
+      value: 'kubernetes'
     - name: duration
-      value: '20h'
+      value: '20hours'
