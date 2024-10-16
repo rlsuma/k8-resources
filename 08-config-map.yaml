@@ -1,8 +1,9 @@
+
 apiVersion: v1
-kind: configMap
+kind: ConfigMap
 metadata:
   name: daws78s
 data:
-  course: "devops with aws"
+  course: "DevOps with AWS"
   trainer: "sivakumar"
-  github: "https://github.com/rlsuma/k8-resources"
+  github: "https://github.com/daws-78s/k8-resources"
