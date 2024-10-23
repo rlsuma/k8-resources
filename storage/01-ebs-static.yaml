@@ -17,6 +17,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: ebs-static
 spec:
+  volumeName: ebs-static
   accessModes:
     - ReadWriteOnce
   resources:
