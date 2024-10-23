@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ebs-static
+  name: ebs-static-claim
 spec:
   volumeName: ebs-static
   accessModes:
@@ -43,7 +43,7 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: ebs-static
+      claimName: ebs-static-claim
 ---
 apiVersion: v1
 kind: Service
