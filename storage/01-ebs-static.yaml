@@ -3,17 +3,14 @@ kind: PersistentVolume
 metadata:
   name: ebs-static
 spec:
+  accessModes:
+  - ReadWriteOnce
   capacity:
     storage: 100Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: ebs-sc
-  awsElasticBlockStore:
-    volumeID: "aws://us-west-2a/vol-0e5c7bf7ab4829091"
+  csi:
+    driver: ebs.csi.aws.com
     fsType: ext4
-
-
+    volumeHandle: vol-0e5c7bf7ab4829091
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
