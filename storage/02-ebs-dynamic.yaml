@@ -4,7 +4,6 @@ metadata:
   name: ebs-dynamic
 spec:
   storageClassName: "expense-ebs"
-  volumeName: ebs-dynamic
   accessModes:
     - ReadWriteOnce
   resources:
@@ -19,7 +18,7 @@ metadata:
     purpose: ebs-static
     project: expense
 spec:
-  containers:
+  containers: 
   - name: nginx
     image: nginx
     volumeMounts:
