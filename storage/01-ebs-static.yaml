@@ -29,9 +29,9 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-static
-labels:
-  purpose: ebs-static
-  project: expense
+  labels:
+    purpose: ebs-static
+    project: expense
 spec:
   containers:
   - name: nginx
@@ -39,6 +39,8 @@ spec:
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1c
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
@@ -49,13 +51,11 @@ kind: Service
 metadata:
   name: nginx-lb
 spec:
-  type: Loadbalancer
+  type: LoadBalancer
   selector:
     purpose: ebs-static
     project: expense
-    
   ports:
   - protocol: TCP
     port: 80 #service-port
-    targetPort: 80 #target-port
-    
+    targetPort: 80
